@@ -42,7 +42,7 @@ export function Footer() {
         <div className="space-y-3">
           <p className="eyebrow">Enquiries</p>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>hello@yourcompany.com</li>
+            <li>inqnity@gmail.com</li>
             <li>+00 000 000 000</li>
             <li>Remote · Worldwide</li>
           </ul>
@@ -51,7 +51,7 @@ export function Footer() {
 
       <div className="border-t border-border/70">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 font-mono text-[0.65rem] uppercase tracking-[0.24em] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} Acme Interactive</span>
+          <span>© {new Date().getFullYear()} InQnity</span>
           <span>Games · Web · Interactive Systems</span>
         </div>
       </div>

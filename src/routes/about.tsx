@@ -4,7 +4,7 @@ import { SectionHeading } from "../components/SectionHeading";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "The Studio — About & Team | Acme Interactive" },
+      { title: "The Studio — About & Team | InQnity" },
       {
         name: "description",
         content:

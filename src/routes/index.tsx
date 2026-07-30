@@ -9,7 +9,7 @@ import { projects } from "../data/projects";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Acme Interactive — Games & Web, Built to Last" },
+      { title: "InQnity — Software & Systems, Built to Last" },
       {
         name: "description",
         content:
