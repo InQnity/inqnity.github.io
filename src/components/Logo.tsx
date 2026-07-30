@@ -12,10 +12,10 @@ export function Logo({ compact = false }: { compact?: boolean }) {
       {!compact && (
         <span className="flex flex-col leading-none">
           <span className="font-display text-lg tracking-wide text-foreground">
-            Acme Interactive
+            InQnity
           </span>
           <span className="font-mono text-[0.55rem] uppercase tracking-[0.3em] text-muted-foreground">
-            Studio · Est. 20XX
+            · Est. 2025
           </span>
         </span>
       )}

@@ -44,7 +44,7 @@ export function Footer() {
         <div className="space-y-3">
           <p className="eyebrow">Enquiries</p>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>hello@yourcompany.com</li>
+            <li>inqnity@gmail.com</li>
             <li>+00 000 000 000</li>
             <li>Remote · Worldwide</li>
           </ul>
