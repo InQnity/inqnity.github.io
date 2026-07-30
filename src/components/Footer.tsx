@@ -8,9 +8,11 @@ export function Footer() {
         <div className="space-y-4">
           <Logo />
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-            A small studio building games and web products with the patience of a
-            craft house and the tooling of a modern engineering team.
+            A small software house building platforms, products, and interactive
+            systems with the patience of a craft house and the tooling of a
+            modern engineering team.
           </p>
+
         </div>
 
         <div className="space-y-3">
@@ -42,7 +44,7 @@ export function Footer() {
         <div className="space-y-3">
           <p className="eyebrow">Enquiries</p>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>inqnity@gmail.com</li>
+            <li>hello@yourcompany.com</li>
             <li>+00 000 000 000</li>
             <li>Remote · Worldwide</li>
           </ul>
@@ -52,7 +54,7 @@ export function Footer() {
       <div className="border-t border-border/70">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 font-mono text-[0.65rem] uppercase tracking-[0.24em] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} InQnity</span>
-          <span>Games · Web · Interactive Systems</span>
+          <span>Systems · Products · Data · Interactive</span>
         </div>
       </div>
     </footer>

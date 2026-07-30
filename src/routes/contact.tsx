@@ -5,19 +5,23 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Start a Project | Acme Interactive" },
+      { title: "Contact — Start a Project | InQnity" },
       {
         name: "description",
         content:
-          "Tell us about your game or web project. We reply to every serious enquiry within two working days.",
+          "Tell us about your platform, product, or interactive project. We reply to every serious enquiry within two working days.",
       },
       { property: "og:title", content: "Contact — Start a Project" },
       {
         property: "og:description",
-        content: "Tell us about your game or web project. We reply within two working days.",
+        content:
+          "Tell us about your software project. We reply within two working days.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
+
   component: ContactPage,
 });
 
@@ -58,7 +62,7 @@ function ContactPage() {
 
           <dl className="mt-12 space-y-6">
             {[
-              { k: "Email", v: "hello@yourcompany.com" },
+              { k: "Email", v: "inqnity@gmail.com" },
               { k: "Phone", v: "+00 000 000 000" },
               { k: "Studio", v: "Remote · Worldwide" },
             ].map((row) => (
@@ -104,11 +108,15 @@ function ContactPage() {
             <label className={labelClass} htmlFor="type">
               Project type
             </label>
-            <select id="type" name="type" className={fieldClass} defaultValue="game">
-              <option value="game">Game project</option>
-              <option value="web">Web project</option>
-              <option value="both">Both / not sure yet</option>
+            <select id="type" name="type" className={fieldClass} defaultValue="platform">
+              <option value="platform">Custom platform / internal system</option>
+              <option value="web">Web product or commerce</option>
+              <option value="mobile">Mobile or connected devices</option>
+              <option value="data">Data, analytics or AI</option>
+              <option value="game">Game / real-time interactive</option>
+              <option value="other">Something else / not sure yet</option>
             </select>
+
           </div>
 
           <div className="space-y-2">

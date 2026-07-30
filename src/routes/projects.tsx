@@ -1,23 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
-import gamesImage from "../assets/games.jpg";
-import webImage from "../assets/web.jpg";
 import { SectionHeading } from "../components/SectionHeading";
-import { projects, type Project } from "../data/projects";
+import { categories, projects, type Project } from "../data/projects";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Games & Web | Acme Interactive" },
+      { title: "Projects — Software Systems & Products | Acme Interactive" },
       {
         name: "description",
         content:
-          "Selected game titles and web platforms built by Acme Interactive, from original IP to internal data consoles.",
+          "Selected software systems, web products, data platforms, mobile apps, and interactive work built by Acme Interactive.",
       },
-      { property: "og:title", content: "Projects — Games & Web | Acme Interactive" },
+      {
+        property: "og:title",
+        content: "Projects — Software Systems & Products | Acme Interactive",
+      },
       {
         property: "og:description",
-        content: "Selected game titles and web platforms built by Acme Interactive.",
+        content:
+          "Selected platforms, products, and interactive systems built by Acme Interactive.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ProjectsPage,
@@ -54,73 +58,47 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 function ProjectsPage() {
-  const games = projects.filter((p) => p.kind === "game");
-  const web = projects.filter((p) => p.kind === "web");
+  const grouped = categories
+    .map((c) => ({ ...c, items: projects.filter((p) => p.kind === c.id) }))
+    .filter((c) => c.items.length > 0);
 
   return (
     <>
       <section className="mx-auto max-w-6xl px-6 pt-24 pb-14">
         <p className="eyebrow">Portfolio</p>
         <h1 className="mt-6 max-w-3xl text-5xl leading-[1.05] sm:text-6xl">
-          The work, in two <span className="gilt-text">registers</span>.
+          Software built to <span className="gilt-text">carry weight</span>.
         </h1>
         <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-          Game projects and web projects are kept apart on purpose — different
-          teams, different craft, the same standard.
+          Platforms, products, data systems, and interactive work. Different
+          domains, one standard of engineering.
         </p>
       </section>
 
-      {/* Games */}
-      <section id="games" className="border-t border-border/70 bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+      {grouped.map((group, i) => (
+        <section
+          key={group.id}
+          id={group.id}
+          className={
+            i % 2 === 0
+              ? "border-t border-border/70 bg-surface"
+              : "border-t border-border/70"
+          }
+        >
+          <div className="mx-auto max-w-6xl px-6 py-20">
             <SectionHeading
-              eyebrow="Section 01 · Games"
-              title="Game projects"
-              lead="Original titles and co-development work — gameplay systems, engine-level tooling, and production pipelines."
+              eyebrow={`${String(i + 1).padStart(2, "0")} · ${group.label}`}
+              title={group.label}
+              lead={group.lead}
             />
-            <img
-              src={gamesImage}
-              alt="Concept art from an in-development game world"
-              loading="lazy"
-              width={1200}
-              height={800}
-              className="h-64 w-full border border-border object-cover opacity-70"
-            />
+            <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {group.items.map((p) => (
+                <ProjectCard key={p.slug} project={p} />
+              ))}
+            </div>
           </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {games.map((p) => (
-              <ProjectCard key={p.slug} project={p} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Web */}
-      <section id="web" className="border-t border-border/70">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-            <SectionHeading
-              eyebrow="Section 02 · Web"
-              title="Web projects"
-              lead="Brand presences, commerce, and internal platforms — engineered for speed, accessibility, and a long maintenance life."
-            />
-            <img
-              src={webImage}
-              alt="Abstract visual representing web platform work"
-              loading="lazy"
-              width={1200}
-              height={800}
-              className="h-64 w-full border border-border object-cover opacity-70"
-            />
-          </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {web.map((p) => (
-              <ProjectCard key={p.slug} project={p} />
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
     </>
   );
 }

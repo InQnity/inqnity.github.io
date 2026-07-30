@@ -4,30 +4,33 @@ import heroImage from "../assets/hero.jpg";
 import gamesImage from "../assets/games.jpg";
 import webImage from "../assets/web.jpg";
 import { SectionHeading } from "../components/SectionHeading";
-import { projects } from "../data/projects";
+import { categories, projects } from "../data/projects";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "InQnity — Software & Systems, Built to Last" },
+      { title: "InQnity — Software Systems, Built to Last" },
       {
         name: "description",
         content:
-          "An independent studio crafting original games and considered web products for clients who care about the details.",
+          "An independent software house building platforms, digital products, data systems, and interactive software for clients who care about the details.",
       },
-      { property: "og:title", content: "Acme Interactive — Games & Web, Built to Last" },
+      { property: "og:title", content: "InQnity — Software Systems, Built to Last" },
       {
         property: "og:description",
         content:
-          "An independent studio crafting original games and considered web products.",
+          "An independent software house building platforms, products, and interactive systems.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
 });
 
 function Index() {
-  const featured = [projects[0], projects[3], projects[1]];
+  const featured = [projects[0], projects[2], projects[4]];
+
 
   return (
     <>
@@ -47,14 +50,15 @@ function Index() {
         <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-32 sm:pt-40 sm:pb-44">
           <p className="eyebrow">Independent software house</p>
           <h1 className="mt-8 max-w-3xl text-5xl leading-[1.02] sm:text-7xl">
-            We build <span className="gilt-text">worlds</span> and the
-            <br className="hidden sm:block" /> systems that carry them.
+            We build the <span className="gilt-text">systems</span> your
+            <br className="hidden sm:block" /> business runs on.
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Two practices, one workshop: original game development and web
-            products engineered with the same patience. No templates, no filler
-            — only work we'd sign.
+            Custom platforms, digital products, data and AI, mobile, and
+            real-time interactive software — engineered end to end with the same
+            patience. No templates, no filler — only work we'd sign.
           </p>
+
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <Link
               to="/projects"
@@ -72,29 +76,29 @@ function Index() {
         </div>
       </section>
 
-      {/* Two practices */}
+      {/* Practices */}
       <section className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading
-          eyebrow="Two practices"
-          title="Games and web, kept deliberately separate."
-          lead="Different disciplines, different rhythms. We staff them as distinct teams so neither one is a side project."
+          eyebrow="What we build"
+          title="One engineering standard, across every layer."
+          lead="From the platform underneath to the interface on top — we take on the whole system, or the part of it that's hurting."
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {[
             {
-              image: gamesImage,
+              image: webImage,
               label: "Practice 01",
-              title: "Game Development",
-              copy: "Original IP and co-development. Engine work, gameplay systems, tooling, and the unglamorous pipeline that keeps a team shipping.",
-              to: "/projects" as const,
+              title: "Systems & Products",
+              copy: "Custom platforms, internal systems, web and mobile products, integrations, and the data layer that ties them together.",
+              to: "/services" as const,
             },
             {
-              image: webImage,
+              image: gamesImage,
               label: "Practice 02",
-              title: "Web Engineering",
-              copy: "Brand sites, commerce, and internal platforms. Fast, accessible, and maintainable long after the launch announcement.",
-              to: "/services" as const,
+              title: "Interactive & Real-time",
+              copy: "Games, simulation, and visualisation work where physics, frame budget, and feel decide whether it's any good.",
+              to: "/projects" as const,
             },
           ].map((p) => (
             <Link
@@ -123,7 +127,28 @@ function Index() {
             </Link>
           ))}
         </div>
+
+        <div className="mt-10 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { t: "Custom platforms", c: "Operations consoles, portals, and line-of-business systems." },
+            { t: "Architecture & integration", c: "APIs and event pipelines that make existing systems talk." },
+            { t: "Web & commerce", c: "Customer-facing products with real performance budgets." },
+            { t: "Mobile & devices", c: "Cross-platform apps and offline-first field tooling." },
+            { t: "Data & applied AI", c: "Warehouses, reporting, and AI grounded in your own data." },
+            { t: "Cloud & reliability", c: "Infrastructure, observability, and safe release pipelines." },
+          ].map((c) => (
+            <div key={c.t} className="hairline-top pt-4">
+              <p className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-primary">
+                {c.t}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {c.c}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
+
 
       {/* Selected work */}
       <section className="border-y border-border/70 bg-surface">
@@ -143,7 +168,7 @@ function Index() {
                   <p className="mt-1 text-sm text-muted-foreground">{p.role}</p>
                 </div>
                 <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">
-                  {p.kind === "game" ? "Game" : "Web"} · {p.year}
+                  {categories.find((c) => c.id === p.kind)?.label} · {p.year}
                 </span>
               </Link>
             ))}
@@ -161,7 +186,7 @@ function Index() {
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-10 sm:grid-cols-3">
           {[
-            { k: "12+", v: "Products shipped across games and web" },
+            { k: "12+", v: "Systems and products shipped across five domains" },
             { k: "9", v: "Craftspeople, no layers in between" },
             { k: "100%", v: "Of engagements led by a senior owner" },
           ].map((s) => (

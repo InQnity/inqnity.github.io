@@ -8,13 +8,16 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "A senior-led studio of nine building games and web products. Our principles, our people, and how we run projects.",
+          "A senior-led team of nine engineering software systems, digital products, and interactive software. Our principles, our people, and how we run projects.",
       },
       { property: "og:title", content: "The Studio — About & Team" },
       {
         property: "og:description",
-        content: "A senior-led studio of nine building games and web products.",
+        content:
+          "A senior-led team of nine building software systems and digital products.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: AboutPage,
@@ -22,12 +25,13 @@ export const Route = createFileRoute("/about")({
 
 const team = [
   { name: "Founder Name", role: "Founder · Technical Director", initials: "FN" },
-  { name: "Team Member", role: "Game Director", initials: "TM" },
-  { name: "Team Member", role: "Lead Engineer, Web", initials: "TM" },
-  { name: "Team Member", role: "Art Director", initials: "TM" },
-  { name: "Team Member", role: "Gameplay Engineer", initials: "TM" },
-  { name: "Team Member", role: "Producer", initials: "TM" },
+  { name: "Team Member", role: "Principal Systems Architect", initials: "TM" },
+  { name: "Team Member", role: "Lead Engineer, Product", initials: "TM" },
+  { name: "Team Member", role: "Data & AI Lead", initials: "TM" },
+  { name: "Team Member", role: "Interactive / Real-time Engineer", initials: "TM" },
+  { name: "Team Member", role: "Delivery Lead", initials: "TM" },
 ];
+
 
 const principles = [
   {
@@ -54,10 +58,12 @@ function AboutPage() {
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
           We started as a handful of engineers and designers who kept ending up on
-          the same projects. Today we split our time between original game work and
-          web products for clients who want something made properly — and we intend
-          to stay small enough to keep it that way.
+          the same projects. Today we build software systems end to end —
+          platforms, products, data, and real-time interactive work — for clients
+          who want something made properly, and we intend to stay small enough to
+          keep it that way.
         </p>
+
       </section>
 
       <section className="border-t border-border/70 bg-surface">
