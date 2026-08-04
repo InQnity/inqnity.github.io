@@ -13,8 +13,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: "The Studio — About & Team" },
       {
         property: "og:description",
-        content:
-          "A senior-led team of nine building software systems and digital products.",
+        content: "A senior-led team of nine building software systems and digital products.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -23,20 +22,10 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-const team = [
-  { name: "Founder Name", role: "Founder · Technical Director", initials: "FN" },
-  { name: "Team Member", role: "Principal Systems Architect", initials: "TM" },
-  { name: "Team Member", role: "Lead Engineer, Product", initials: "TM" },
-  { name: "Team Member", role: "Data & AI Lead", initials: "TM" },
-  { name: "Team Member", role: "Interactive / Real-time Engineer", initials: "TM" },
-  { name: "Team Member", role: "Delivery Lead", initials: "TM" },
-];
-
-
 const principles = [
   {
     title: "Small by choice",
-    copy: "Nine people, all senior. The person you meet is the person who builds it.",
+    copy: "A focused senior team. The person you meet is the person who helps build it.",
   },
   {
     title: "Built to outlast us",
@@ -57,13 +46,11 @@ function AboutPage() {
           A workshop, not a <span className="gilt-text">factory</span>.
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          We started as a handful of engineers and designers who kept ending up on
-          the same projects. Today we build software systems end to end —
-          platforms, products, data, and real-time interactive work — for clients
-          who want something made properly, and we intend to stay small enough to
-          keep it that way.
+          We started as a handful of engineers and designers who kept ending up on the same
+          projects. Today we build software systems end to end — platforms, products, data, and
+          real-time interactive work — for clients who want something made properly, and we intend
+          to stay small enough to keep it that way.
         </p>
-
       </section>
 
       <section className="border-t border-border/70 bg-surface">
@@ -73,9 +60,7 @@ function AboutPage() {
             {principles.map((p) => (
               <div key={p.title} className="hairline-top pt-6">
                 <h3 className="text-2xl">{p.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {p.copy}
-                </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.copy}</p>
               </div>
             ))}
           </div>
@@ -86,21 +71,27 @@ function AboutPage() {
         <div className="mx-auto max-w-6xl px-6 py-20">
           <SectionHeading
             eyebrow="Team"
-            title="The people on the tools."
-            lead="Placeholder names and roles — send us your team details and we'll swap them in."
+            title="Built by a senior, hands-on crew."
+            lead="We are not publishing individual team profiles right now. Team structure and specialist roles are shared during project scoping."
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((m, i) => (
-              <div key={i} className="vault-panel flex items-center gap-5 p-6">
-                <span className="grid size-14 shrink-0 place-items-center border border-[var(--hairline)] font-display text-xl text-primary">
-                  {m.initials}
-                </span>
-                <div>
-                  <p className="text-lg text-foreground">{m.name}</p>
-                  <p className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">
-                    {m.role}
-                  </p>
-                </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Senior-led delivery",
+                copy: "Product and engineering decisions stay with the team doing the work.",
+              },
+              {
+                title: "Cross-discipline execution",
+                copy: "Web, systems, data, mobile, and interactive capability under one studio brand.",
+              },
+              {
+                title: "Scale-ready partnerships",
+                copy: "As demand grows, we expand teams intentionally without lowering quality.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="vault-panel p-7">
+                <h3 className="text-2xl">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.copy}</p>
               </div>
             ))}
           </div>

@@ -1,9 +1,4 @@
-export type ProjectCategory =
-  | "platform"
-  | "web"
-  | "game"
-  | "mobile"
-  | "data";
+export type ProjectCategory = "platform" | "web" | "game" | "mobile" | "data";
 
 export type Project = {
   slug: string;
@@ -12,8 +7,12 @@ export type Project = {
   year: string;
   role: string;
   summary: string;
-  stack: string[];
   status: "In production" | "Shipped" | "Prototype";
+  visual: {
+    logoMark: string;
+    cardGradient: string;
+    logoImage?: string;
+  };
 };
 
 export const categories: {
@@ -56,91 +55,35 @@ export const categories: {
 
 export const projects: Project[] = [
   {
-    slug: "atlas-console",
-    title: "Atlas Console",
-    kind: "platform",
-    year: "2026",
-    role: "Operations platform · Architecture & build",
-    summary:
-      "A dense operations console replacing eleven spreadsheets. Real-time sync, role-based access, and audit trails their compliance team actually likes.",
-    stack: ["TypeScript", "WebSockets", "Postgres"],
-    status: "In production",
-  },
-  {
-    slug: "keystone-erp",
-    title: "Keystone",
-    kind: "platform",
-    year: "2025",
-    role: "Core systems · Integration & migration",
-    summary:
-      "A modular order-to-cash system for a manufacturer, integrating legacy ERP, warehouse hardware, and finance in one event-driven backbone.",
-    stack: [".NET", "Event streaming", "Kubernetes"],
-    status: "Shipped",
-  },
-  {
-    slug: "halcyon-capital",
-    title: "Halcyon Capital",
+    slug: "probrotherinvestment",
+    title: "ProBrotherInvestment",
     kind: "web",
     year: "2026",
     role: "Brand site & investor portal",
     summary:
-      "A restrained, typographically-led presence for a private investment house, paired with a gated portal for quarterly reporting.",
-    stack: ["React", "TypeScript", "Postgres"],
-    status: "Shipped",
-  },
-  {
-    slug: "meridian-commerce",
-    title: "Meridian",
-    kind: "web",
-    year: "2025",
-    role: "Storefront & operations tooling",
-    summary:
-      "Headless commerce for a heritage goods maker: bespoke storefront, warehouse tooling, and a checkout that survived launch week traffic.",
-    stack: ["SSR", "Stripe", "Edge functions"],
-    status: "Shipped",
-  },
-  {
-    slug: "lumen-insights",
-    title: "Lumen Insights",
-    kind: "data",
-    year: "2026",
-    role: "Data platform & applied AI",
-    summary:
-      "A unified reporting layer over six source systems, with document extraction and forecasting models the operations team tunes themselves.",
-    stack: ["Python", "dbt", "LLM pipelines"],
+      "A web presence and investment-focused portal built for credibility, clarity, and long-term growth.",
     status: "In production",
+    visual: {
+      logoMark: "PBI",
+      logoImage: "/projects-logo/probrotherinvestment-logo.png",
+      cardGradient:
+        "radial-gradient(120% 90% at 85% 10%, color-mix(in oklab, var(--gold) 28%, transparent) 0%, transparent 60%), linear-gradient(160deg, color-mix(in oklab, var(--surface-raised) 86%, var(--gold-soft) 14%) 0%, var(--surface) 62%, var(--background) 100%)",
+    },
   },
   {
-    slug: "fieldmark",
-    title: "Fieldmark",
-    kind: "mobile",
-    year: "2025",
-    role: "Field application & sync engine",
-    summary:
-      "An offline-first inspection app for crews working without signal, with conflict-safe sync and hardware-backed evidence capture.",
-    stack: ["React Native", "SQLite", "Offline sync"],
-    status: "Shipped",
-  },
-  {
-    slug: "aether-hollow",
-    title: "Aether Hollow",
+    slug: "kart-the-tech-filled-racing-game",
+    title: "Kart: The Tech Filled Racing Game",
     kind: "game",
-    year: "2026",
+    year: "2025",
     role: "Original IP · Design & engineering",
     summary:
-      "An atmospheric action-adventure set in a collapsed mining kingdom. Custom traversal systems, hand-authored lighting, and a score recorded live.",
-    stack: ["Unity", "C#", "HLSL"],
+      "A high-energy racing title with a tech-forward identity, focused on responsive handling and competitive replayability.",
     status: "In production",
-  },
-  {
-    slug: "iron-parlour",
-    title: "Iron Parlour",
-    kind: "game",
-    year: "2025",
-    role: "Co-development · Gameplay & tools",
-    summary:
-      "A tactics roguelite for PC. We built the deterministic combat simulation, replay tooling, and the content pipeline the writers work in daily.",
-    stack: ["Unreal", "C++", "Blueprints"],
-    status: "Shipped",
+    visual: {
+      logoMark: "KART",
+      logoImage: "/logo/kart-tech-filled-racing-logo.png",
+      cardGradient:
+        "radial-gradient(120% 90% at 90% 20%, color-mix(in oklab, var(--verdigris) 34%, transparent) 0%, transparent 58%), linear-gradient(160deg, color-mix(in oklab, var(--surface-raised) 82%, var(--verdigris) 18%) 0%, var(--surface) 62%, var(--background) 100%)",
+    },
   },
 ];

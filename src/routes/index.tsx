@@ -29,8 +29,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const featured = [projects[0], projects[2], projects[4]];
-
+  const featured = projects.slice(0, 3);
 
   return (
     <>
@@ -43,10 +42,7 @@ function Index() {
           height={1008}
           className="absolute inset-0 size-full object-cover opacity-60"
         />
-        <div
-          className="absolute inset-0"
-          style={{ background: "var(--gradient-veil)" }}
-        />
+        <div className="absolute inset-0" style={{ background: "var(--gradient-veil)" }} />
         <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-32 sm:pt-40 sm:pb-44">
           <p className="eyebrow">Independent software house</p>
           <h1 className="mt-8 max-w-3xl text-5xl leading-[1.02] sm:text-7xl">
@@ -54,9 +50,9 @@ function Index() {
             <br className="hidden sm:block" /> business runs on.
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Custom platforms, digital products, data and AI, mobile, and
-            real-time interactive software — engineered end to end with the same
-            patience. No templates, no filler — only work we'd sign.
+            Custom platforms, digital products, data and AI, mobile, and real-time interactive
+            software — engineered end to end with the same patience. No templates, no filler — only
+            work we'd sign.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-4">
@@ -101,11 +97,7 @@ function Index() {
               to: "/projects" as const,
             },
           ].map((p) => (
-            <Link
-              key={p.title}
-              to={p.to}
-              className="group relative overflow-hidden vault-panel"
-            >
+            <Link key={p.title} to={p.to} className="group relative overflow-hidden vault-panel">
               <img
                 src={p.image}
                 alt=""
@@ -117,9 +109,7 @@ function Index() {
               <div className="p-8">
                 <p className="eyebrow">{p.label}</p>
                 <h3 className="mt-4 text-3xl">{p.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  {p.copy}
-                </p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.copy}</p>
                 <span className="mt-6 inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-primary">
                   Explore <ArrowUpRight className="size-3" />
                 </span>
@@ -130,30 +120,42 @@ function Index() {
 
         <div className="mt-10 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { t: "Custom platforms", c: "Operations consoles, portals, and line-of-business systems." },
-            { t: "Architecture & integration", c: "APIs and event pipelines that make existing systems talk." },
+            {
+              t: "Custom platforms",
+              c: "Operations consoles, portals, and line-of-business systems.",
+            },
+            {
+              t: "Architecture & integration",
+              c: "APIs and event pipelines that make existing systems talk.",
+            },
             { t: "Web & commerce", c: "Customer-facing products with real performance budgets." },
             { t: "Mobile & devices", c: "Cross-platform apps and offline-first field tooling." },
-            { t: "Data & applied AI", c: "Warehouses, reporting, and AI grounded in your own data." },
-            { t: "Cloud & reliability", c: "Infrastructure, observability, and safe release pipelines." },
+            {
+              t: "Data & applied AI",
+              c: "Warehouses, reporting, and AI grounded in your own data.",
+            },
+            {
+              t: "Cloud & reliability",
+              c: "Infrastructure, observability, and safe release pipelines.",
+            },
           ].map((c) => (
             <div key={c.t} className="hairline-top pt-4">
               <p className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-primary">
                 {c.t}
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {c.c}
-              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.c}</p>
             </div>
           ))}
         </div>
       </section>
 
-
       {/* Selected work */}
       <section className="border-y border-border/70 bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <SectionHeading eyebrow="Selected work" title="A few recent commissions." />
+          <SectionHeading
+            eyebrow="Current portfolio"
+            title="Live products, with more in the pipeline."
+          />
           <div className="mt-12 divide-y divide-border/70 border-y border-border/70">
             {featured.map((p) => (
               <Link
@@ -162,9 +164,7 @@ function Index() {
                 className="group flex flex-col gap-3 py-7 transition-colors hover:bg-accent/40 sm:flex-row sm:items-baseline sm:justify-between sm:px-4"
               >
                 <div>
-                  <h3 className="text-2xl text-foreground group-hover:text-primary">
-                    {p.title}
-                  </h3>
+                  <h3 className="text-2xl text-foreground group-hover:text-primary">{p.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{p.role}</p>
                 </div>
                 <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">
@@ -186,9 +186,9 @@ function Index() {
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-10 sm:grid-cols-3">
           {[
-            { k: "12+", v: "Systems and products shipped across five domains" },
-            { k: "9", v: "Craftspeople, no layers in between" },
-            { k: "100%", v: "Of engagements led by a senior owner" },
+            { k: "2", v: "Products currently showcased" },
+            { k: "5", v: "Capability lanes across software, data, and interactive" },
+            { k: "∞", v: "Room to scale the portfolio as InQnity grows" },
           ].map((s) => (
             <div key={s.k} className="hairline-top pt-6">
               <p className="font-display text-6xl gilt-text">{s.k}</p>
@@ -208,8 +208,8 @@ function Index() {
             Tell us what you're building.
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground">
-            We take on a small number of projects each year so every one gets the
-            attention it deserves.
+            We take on a small number of projects each year so every one gets the attention it
+            deserves.
           </p>
           <Link
             to="/contact"
