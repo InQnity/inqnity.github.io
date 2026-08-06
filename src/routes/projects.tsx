@@ -66,9 +66,6 @@ function ProjectCard({ project }: { project: Project }) {
         </span>
       </div>
       <p className="relative z-10 mt-2 text-sm text-primary">{project.role}</p>
-      <p className="relative z-10 mt-5 text-sm leading-relaxed text-muted-foreground">
-        {project.summary}
-      </p>
       <p className="relative z-10 mt-6 hairline-top pt-4 font-mono text-[0.6rem] uppercase tracking-[0.22em] text-primary">
         {project.status}
       </p>

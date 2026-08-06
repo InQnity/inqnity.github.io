@@ -6,7 +6,6 @@ export type Project = {
   kind: ProjectCategory;
   year: string;
   role: string;
-  summary: string;
   status: "In production" | "Shipped" | "Prototype";
   visual: {
     logoMark: string;
@@ -60,8 +59,6 @@ export const projects: Project[] = [
     kind: "web",
     year: "2026",
     role: "Brand site & investor portal",
-    summary:
-      "A web presence and investment-focused portal built for credibility, clarity, and long-term growth.",
     status: "In production",
     visual: {
       logoMark: "PBI",
@@ -76,8 +73,6 @@ export const projects: Project[] = [
     kind: "game",
     year: "2025",
     role: "Original IP · Design & engineering",
-    summary:
-      "A high-energy racing title with a tech-forward identity, focused on responsive handling and competitive replayability.",
     status: "In production",
     visual: {
       logoMark: "KART",

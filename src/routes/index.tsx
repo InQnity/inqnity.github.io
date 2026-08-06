@@ -186,9 +186,9 @@ function Index() {
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-10 sm:grid-cols-3">
           {[
-            { k: "2", v: "Products currently showcased" },
-            { k: "5", v: "Capability lanes across software, data, and interactive" },
-            { k: "∞", v: "Room to scale the portfolio as InQnity grows" },
+            { k: "2", v: "Original products live in production" },
+            { k: "100%", v: "Senior ownership on every project, no hand-offs" },
+            { k: "5+", v: "Service lines spanning web, games, data, mobile, and systems" },
           ].map((s) => (
             <div key={s.k} className="hairline-top pt-6">
               <p className="font-display text-6xl gilt-text">{s.k}</p>
