@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "../components/SectionHeading";
 import { categories, projects, type Project } from "../data/projects";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -66,9 +67,20 @@ function ProjectCard({ project }: { project: Project }) {
         </span>
       </div>
       <p className="relative z-10 mt-2 text-sm text-primary">{project.role}</p>
-      <p className="relative z-10 mt-6 hairline-top pt-4 font-mono text-[0.6rem] uppercase tracking-[0.22em] text-primary">
-        {project.status}
-      </p>
+      <div className="relative z-10 mt-6 hairline-top pt-4 flex items-center justify-between">
+        <p className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-primary">
+          {project.status}
+        </p>
+        {project.url && (<a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-mono text-[0.6rem] uppercase tracking-[0.22em] text-muted-foreground hover:text-primary"
+          >
+          <SquareArrowOutUpRight className="size-3" />
+          </a>
+        )}
+      </div>
     </article>
   );
 }

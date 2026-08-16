@@ -7,6 +7,7 @@ export type Project = {
   year: string;
   role: string;
   status: "In production" | "Shipped" | "Prototype";
+  url? : string,
   visual: {
     logoMark: string;
     cardGradient: string;
@@ -60,6 +61,7 @@ export const projects: Project[] = [
     year: "2026",
     role: "Brand site & investor portal",
     status: "In production",
+    url: "https://probrothersinvestment.com/",
     visual: {
       logoMark: "PBI",
       logoImage: "/projects-logo/probrotherinvestment-logo.png",
@@ -74,6 +76,7 @@ export const projects: Project[] = [
     year: "2025",
     role: "Original IP · Design & engineering",
     status: "In production",
+    url: "https://store.steampowered.com/app/2165230/Kart_The_Tech_Filled_Racing_Game/",
     visual: {
       logoMark: "KART",
       logoImage: "/logo/kart-tech-filled-racing-logo.png",
