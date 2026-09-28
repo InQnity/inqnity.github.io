@@ -14,8 +14,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact — Start a Project" },
       {
         property: "og:description",
-        content:
-          "Tell us about your software project. We reply within two working days.",
+        content: "Tell us about your software project. We reply within two working days.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -28,8 +27,7 @@ export const Route = createFileRoute("/contact")({
 const fieldClass =
   "w-full border border-input bg-surface px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary";
 
-const labelClass =
-  "font-mono text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground";
+const labelClass = "font-mono text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground";
 
 function ContactPage() {
   const [sending, setSending] = useState(false);
@@ -56,8 +54,8 @@ function ContactPage() {
             Start a <span className="gilt-text">conversation</span>.
           </h1>
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
-            Tell us what you're making, when it needs to exist, and what's in the
-            way. We reply to every serious enquiry within two working days.
+            Tell us what you're making, when it needs to exist, and what's in the way. We reply to
+            every serious enquiry within two working days.
           </p>
 
           <dl className="mt-12 space-y-6">
@@ -80,7 +78,13 @@ function ContactPage() {
               <label className={labelClass} htmlFor="name">
                 Name
               </label>
-              <input id="name" name="name" required className={fieldClass} placeholder="Your name" />
+              <input
+                id="name"
+                name="name"
+                required
+                className={fieldClass}
+                placeholder="Your name"
+              />
             </div>
             <div className="space-y-2">
               <label className={labelClass} htmlFor="email">
@@ -110,13 +114,11 @@ function ContactPage() {
             </label>
             <select id="type" name="type" className={fieldClass} defaultValue="platform">
               <option value="platform">Custom platform / internal system</option>
-              <option value="web">Web product or commerce</option>
-              <option value="mobile">Mobile or connected devices</option>
+              <option value="product">Website, app or commerce</option>
               <option value="data">Data, analytics or AI</option>
               <option value="game">Game / real-time interactive</option>
               <option value="other">Something else / not sure yet</option>
             </select>
-
           </div>
 
           <div className="space-y-2">

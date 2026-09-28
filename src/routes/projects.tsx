@@ -10,7 +10,7 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "Current and upcoming software systems, web products, data platforms, mobile apps, and interactive work by InQnity.",
+          "Current and upcoming software systems, websites, apps, data platforms, and interactive work by InQnity.",
       },
       {
         property: "og:title",
@@ -71,13 +71,14 @@ function ProjectCard({ project }: { project: Project }) {
         <p className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-primary">
           {project.status}
         </p>
-        {project.url && (<a
+        {project.url && (
+          <a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 font-mono text-[0.6rem] uppercase tracking-[0.22em] text-muted-foreground hover:text-primary"
           >
-          <SquareArrowOutUpRight className="size-3" />
+            <SquareArrowOutUpRight className="size-3" />
           </a>
         )}
       </div>
@@ -98,8 +99,8 @@ function ProjectsPage() {
           Current products and the <span className="gilt-text">road ahead</span>.
         </h1>
         <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-          Today we are showcasing one web product and one game. InQnity is expanding into broader
-          systems, data, and platform work next.
+          Our digital product work brings websites and apps into one practice, alongside games and
+          interactive software. InQnity is expanding into broader systems and data work next.
         </p>
       </section>
 

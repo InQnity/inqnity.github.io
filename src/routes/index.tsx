@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const featured = projects.slice(0, 3);
+  const featured = projects.slice(0, 4);
 
   return (
     <>
@@ -50,9 +50,9 @@ function Index() {
             <br className="hidden sm:block" /> business runs on.
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Custom platforms, digital products, data and AI, mobile, and real-time interactive
-            software — engineered end to end with the same patience. No templates, no filler — only
-            work we'd sign.
+            Custom platforms, websites and apps, data and AI, and real-time interactive software —
+            engineered end to end with the same patience. No templates, no filler — only work we'd
+            sign.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-4">
@@ -86,7 +86,7 @@ function Index() {
               image: webImage,
               label: "Practice 01",
               title: "Systems & Products",
-              copy: "Custom platforms, internal systems, web and mobile products, integrations, and the data layer that ties them together.",
+              copy: "Custom platforms, internal systems, websites and apps, integrations, and the data layer that ties them together.",
               to: "/services" as const,
             },
             {
@@ -128,8 +128,11 @@ function Index() {
               t: "Architecture & integration",
               c: "APIs and event pipelines that make existing systems talk.",
             },
-            { t: "Web & commerce", c: "Customer-facing products with real performance budgets." },
-            { t: "Mobile & devices", c: "Cross-platform apps and offline-first field tooling." },
+            {
+              t: "Websites & commerce",
+              c: "Customer-facing experiences with real performance budgets.",
+            },
+            { t: "Apps & devices", c: "Cross-platform apps and offline-first field tooling." },
             {
               t: "Data & applied AI",
               c: "Warehouses, reporting, and AI grounded in your own data.",
@@ -186,9 +189,9 @@ function Index() {
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-10 sm:grid-cols-3">
           {[
-            { k: "2", v: "Original products live in production" },
+            { k: "3", v: "Products live or in active production" },
             { k: "100%", v: "Senior ownership on every project, no hand-offs" },
-            { k: "5+", v: "Service lines spanning web, games, data, mobile, and systems" },
+            { k: "5+", v: "Service lines spanning websites, apps, games, data, and systems" },
           ].map((s) => (
             <div key={s.k} className="hairline-top pt-6">
               <p className="font-display text-6xl gilt-text">{s.k}</p>

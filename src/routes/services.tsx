@@ -40,12 +40,12 @@ const systemsServices = [
 
 const productServices = [
   {
-    title: "Web products & commerce",
-    copy: "Customer-facing sites, storefronts, and portals with real performance budgets and accessibility built in.",
+    title: "Websites, apps & commerce",
+    copy: "Customer-facing websites, storefronts, portals, and cross-platform apps with performance and accessibility built in.",
   },
   {
-    title: "Mobile & connected devices",
-    copy: "Cross-platform apps, offline-first field tooling, and software for hardware that lives outside the office.",
+    title: "Product design & engineering",
+    copy: "One product discipline across web and mobile, from early flows and prototypes through production delivery.",
   },
   {
     title: "Data, analytics & applied AI",
@@ -69,10 +69,26 @@ const interactiveServices = [
 ];
 
 const process = [
-  { step: "01", title: "Enquiry", copy: "A short call to understand the ambition, the constraints, and the deadline." },
-  { step: "02", title: "Scoping", copy: "A written plan with milestones, risks, and a fixed shape for phase one." },
-  { step: "03", title: "Build", copy: "Two-week cycles, a working build at the end of each, no status theatre." },
-  { step: "04", title: "Handover", copy: "Documentation, tooling, and a support window so nothing stalls at launch." },
+  {
+    step: "01",
+    title: "Enquiry",
+    copy: "A short call to understand the ambition, the constraints, and the deadline.",
+  },
+  {
+    step: "02",
+    title: "Scoping",
+    copy: "A written plan with milestones, risks, and a fixed shape for phase one.",
+  },
+  {
+    step: "03",
+    title: "Build",
+    copy: "Two-week cycles, a working build at the end of each, no status theatre.",
+  },
+  {
+    step: "04",
+    title: "Handover",
+    copy: "Documentation, tooling, and a support window so nothing stalls at launch.",
+  },
 ];
 
 function ServiceGrid({ items }: { items: { title: string; copy: string }[] }) {
@@ -81,9 +97,7 @@ function ServiceGrid({ items }: { items: { title: string; copy: string }[] }) {
       {items.map((s) => (
         <div key={s.title} className="hairline-top pt-6">
           <h3 className="text-2xl">{s.title}</h3>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            {s.copy}
-          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
         </div>
       ))}
     </div>
@@ -99,8 +113,8 @@ function ServicesPage() {
           What we take on, and how we <span className="gilt-text">work</span>.
         </h1>
         <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-          We build software systems end to end — the platform underneath, the
-          product on top, and the tooling that keeps both alive.
+          We build software systems end to end — the platform underneath, the product on top, and
+          the tooling that keeps both alive.
         </p>
       </section>
 
@@ -113,7 +127,7 @@ function ServicesPage() {
 
       <section className="border-t border-border/70">
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <SectionHeading eyebrow="Products" title="Digital products & data" />
+          <SectionHeading eyebrow="Web & Apps" title="Digital products & data" />
           <ServiceGrid items={productServices} />
         </div>
       </section>
@@ -131,13 +145,9 @@ function ServicesPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {process.map((p) => (
               <div key={p.step} className="vault-panel p-7">
-                <p className="font-mono text-[0.7rem] tracking-[0.28em] text-primary">
-                  {p.step}
-                </p>
+                <p className="font-mono text-[0.7rem] tracking-[0.28em] text-primary">{p.step}</p>
                 <h3 className="mt-4 text-2xl">{p.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {p.copy}
-                </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.copy}</p>
               </div>
             ))}
           </div>
