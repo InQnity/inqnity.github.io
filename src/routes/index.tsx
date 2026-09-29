@@ -43,31 +43,43 @@ function Index() {
           className="absolute inset-0 size-full object-cover opacity-60"
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-veil)" }} />
-        <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-32 sm:pt-40 sm:pb-44">
-          <p className="eyebrow">Independent software house</p>
-          <h1 className="mt-8 max-w-3xl text-5xl leading-[1.02] sm:text-7xl">
-            We build the <span className="gilt-text">systems</span> your
-            <br className="hidden sm:block" /> business runs on.
-          </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Custom platforms, websites and apps, data and AI, and real-time interactive software —
-            engineered end to end with the same patience. No templates, no filler — only work we'd
-            sign.
-          </p>
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 pt-20 pb-28 sm:pt-28 sm:pb-36 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,0.55fr)] lg:gap-16 lg:pt-40 lg:pb-44">
+          <div className="order-2 lg:order-1">
+            <p className="eyebrow">Independent software house</p>
+            <h1 className="mt-8 max-w-3xl text-5xl leading-[1.02] sm:text-6xl xl:text-7xl">
+              We build the <span className="gilt-text">systems</span>
+              <span className="block sm:whitespace-nowrap">your business runs on.</span>
+            </h1>
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
+              Custom platforms, websites and apps, data and AI, and real-time interactive software —
+              engineered end to end with the same patience. No templates, no filler — only work we'd
+              sign.
+            </p>
 
-          <div className="mt-12 flex flex-wrap items-center gap-4">
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 bg-primary px-7 py-4 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              View the work <ArrowUpRight className="size-3.5" />
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 border border-[var(--hairline)] px-7 py-4 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-foreground transition-colors hover:bg-accent"
-            >
-              Start a conversation
-            </Link>
+            <div className="mt-12 flex flex-wrap items-center gap-4">
+              <Link
+                to="/projects"
+                className="inline-flex items-center gap-2 bg-primary px-7 py-4 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                View the work <ArrowUpRight className="size-3.5" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 border border-[var(--hairline)] px-7 py-4 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-foreground transition-colors hover:bg-accent"
+              >
+                Start a conversation
+              </Link>
+            </div>
+          </div>
+
+          <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
+            <img
+              src="/inqnity-logo.png"
+              alt="InQnity"
+              width={500}
+              height={500}
+              className="w-36 drop-shadow-2xl sm:w-48 lg:w-full lg:max-w-80"
+            />
           </div>
         </div>
       </section>
